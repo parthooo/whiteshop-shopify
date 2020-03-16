@@ -1,0 +1,36 @@
+<!-- /templates/page.liquid -->
+<div class="grid">
+    <div class="grid__item large--five-sixths push--large--one-twelfth">
+  
+
+      {% if customer%}
+      <header class="section-header text-center">
+        <h1>{{ customer.first_name }}</h1>
+        <hr class="hr--small">
+      </header>
+  
+      <div class="grid">
+        <div class="grid__item large--four-fifths push--large--one-tenth">
+          <div class="rte rte--nomargin rte--indented-images">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+      {%else%}
+      <header class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+        <hr class="hr--small">
+      </header>
+  
+      <div class="grid">
+        <div class="grid__item large--four-fifths push--large--one-tenth">
+          <div class="rte rte--nomargin rte--indented-images">
+            <h2>Membership Exclusive content <br> <br> <a href="/account/login">Login here</a></h2>
+          </div>
+        </div>
+      </div>
+
+      {%endif%}
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<!-- /templates/page.liquid -->
+<div class="grid">
+    <div class="grid__item large--five-sixths push--large--one-twelfth">
+  
+      <header class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+        <hr class="hr--small">
+      </header>
+  
+      <div class="grid">
+        <div class="grid__item large--four-fifths push--large--one-tenth">
+          <div class="rte rte--nomargin rte--indented-images">
+            {{ page.content }}
+            <p>Shop Name:{{shop.name}} </p>
+            <p>Shop Phone:{{shop.phone}} </p>
+            <p>Collection counts:{{shop.collections_count}} </p>
+            <p>Product Counts:{{shop.products_count}} </p>
+            <p>Shop Type:{{shop.types}} </p>
+            <p>Theme name:{{theme.name}} </p>
+            <p>Host{{ request.host }} </p>
+            <p>
+                {% form 'currency' %}
+  {{ form | currency_selector }}
+  <button type="submit">Submit</button>
+{% endform %}
+            </p>
+            <p>{% if additional_checkout_buttons %}
+                <div class="additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {% endif %}</p>
+
+              <h2>{{ section.settings.heading }}</h2>
+<a href="{{ section.settings.featured_collection.url }}">This week's best selling items</a>
+
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
